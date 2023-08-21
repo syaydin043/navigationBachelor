@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">navigationBachelor</string>
+<!--    <string name="mapbox_access_token">pk.eyJ1Ijoicy15YXlkaW4iLCJhIjoiY2t3MG5zOXowMDA1ODJ3cjBsdHNmeHZjMyJ9.fYoAdH3CJxrzQHvptxsClw</string>-->
+    <string name="mapbox_access_token">pk.eyJ1IjoieWFzaXJ4eSIsImEiOiJjbGxjMHczNGEwY3g2M2ZtbGNreHJnNHNyIn0.XMdt8PoTVKFp71lZnMJbgw</string>
+
+
+</resources>

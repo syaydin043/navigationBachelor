@@ -1,0 +1,76 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id "org.jetbrains.kotlin.plugin.serialization" version "1.8.0-RC"
+}
+
+android {
+    namespace 'com.example.navigationbachelor'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.example.navigationbachelor"
+        minSdk 21
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    // Add the block below if you're using Kotlin
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    buildFeatures {
+        viewBinding  = true
+    }
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+
+    //Mapbox dependencies
+    //Mapbox MAPS SDK
+    implementation 'com.mapbox.maps:android:10.14.1'
+    //if you need to exclude some gradle files
+    implementation ('com.mapbox.maps:android:10.14.1'){
+        exclude group: 'group_name', module: 'module_name'
+    }
+
+    //Mapbox NAVIGATION SDK
+//    implementation "com.mapbox.navigation:ui-dropin:2.7.0"
+    implementation "com.mapbox.navigation:ui-dropin:2.14.2"
+    implementation "com.mapbox.navigation:android:2.8.0"
+    def lifecycle_version = "2.5.1"
+    implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+
+    implementation "com.mapbox.search:autofill:1.0.0-rc.6"
+    implementation "com.mapbox.search:discover:1.0.0-rc.6"
+    implementation "com.mapbox.search:place-autocomplete:1.0.0-rc.6"
+    implementation "com.mapbox.search:mapbox-search-android:1.0.0-rc.6"
+    implementation "com.mapbox.search:mapbox-search-android-ui:1.0.0-rc.6"
+}
